@@ -1,0 +1,23 @@
+<div>
+  <div>
+  	Answer
+    <div >
+
+      {{a.created.strftime("%b %d, %Y")}}
+
+	  {% for d in a.destinations %}
+	    {{ d.render() | safe }}
+	    <br><br>
+	  {% endfor %}
+
+	  {% if trips %}
+	  {% for t in a.trips %}
+	    {{ t.render() | safe }}
+	    <br><br>
+	  {% endfor %}
+	  {% endif %}
+
+    </div>
+  </div>
+
+</div>

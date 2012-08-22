@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+  <title>Cravel</title>
+  Queried {{curr_time}} seconds ago
+</head>
+
+<body>
+  <a href="/" class="main-title">
+    Cravel
+  </a>
+
+  <form action='' method="get">
+  	Crazy to Travel - search your Cravel <input type='text' name="search"/><input type='submit' value='Search'/>
+  </form>
+
+  <form action='/ask' method="post">
+  	<input type='submit' value='Ask a Question'/>
+  </form>
+
+  <div class="login-area">
+    {% if user %}
+      <a class="login-link" href="/_edit{{path}}">edit</a>&nbsp;|&nbsp;<a class="login-link" href="/_history{{path}}">history</a>&nbsp;&nbsp;&nbsp;&nbsp;{{user.name}} (<a class="login-link" href="/logout">logout</a>)
+    {% else %}
+      <a class="login-link" href="/login">login</a>
+      |
+      <a class="login-link" href="/signup">signup</a>
+    {% endif %}
+  </div>
+  <br>
+  <br>
+  <div id="content">
+  {% block content %}
+  {% endblock %}
+
+
+  </div>
+</body>
+
+</html>

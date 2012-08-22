@@ -1,0 +1,20 @@
+<div>
+  <div>
+  	Trip
+    <div>
+		<a href="">{{t.name}}</a>
+    </div>
+
+    <div >
+
+      {{t.created.strftime("%b %d, %Y")}}
+
+	  {% for destination in t.destinations %}
+	    {{ destination.render() | safe }}
+	    <br><br>
+	  {% endfor %}
+
+    </div>
+  </div>
+
+</div>

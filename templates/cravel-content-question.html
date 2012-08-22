@@ -1,0 +1,18 @@
+<div>
+  <div>
+  	Question
+    <div>
+		<a href="">{{q.question}}</a>
+    </div>
+
+    <div >
+
+      {{q.created.strftime("%b %d, %Y")}}
+
+	    {{ q.answers.render() | safe }}
+	    <br><br>
+
+    </div>
+  </div>
+
+</div>
